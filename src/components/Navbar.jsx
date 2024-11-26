@@ -4,6 +4,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import { useState } from "react";
 import menu from "../assests/menu-icon.svg";
 import decline from "../assests/close-icon.svg";
+import { motion } from "framer-motion";
 
 const Link = ({ page, selectedPage, setselectedPage }) => {
   const spage = page.toLowerCase();
@@ -27,9 +28,19 @@ const Navbar = ({ TopOfPage , selectedPage, setselectedPage }) => {
   return (
     <nav className={`${Headerbg} z-40 w-full fixed top-0 py-2`}>
       <div className="flex items-center justify-between mx-auto w-5/6">
-        <h4 className="font-playfair text-3xl font-bold hover:text-rose-500">
-          JE
-        </h4>
+        <motion.h4
+         variants={{
+           hidden : { y : -100 , opacity : 0 },
+           visible:{
+             opacity:1,
+             y:0 ,   
+             transistion : { duration : 0.5}
+            },
+        
+         }}
+        className="font-playfair text-3xl font-bold hover:text-yellow">
+          Software Engineer
+        </motion.h4>
 
         {/*DEKSTOP NAV */}
         {isAboveSmallScreen ? (
@@ -45,17 +56,17 @@ const Navbar = ({ TopOfPage , selectedPage, setselectedPage }) => {
               setselectedPage={setselectedPage}
             />
             <Link
-              page="Experience"
+              page="Projects"
               selectedPage={selectedPage}
               setselectedPage={setselectedPage}
             />
             <Link
-              page="Testimonials"
+              page="TechTiles"
               selectedPage={selectedPage}
               setselectedPage={setselectedPage}
             />
             <Link
-              page="Contacts"
+              page="Contact"
               selectedPage={selectedPage}
               setselectedPage={setselectedPage}
             />
@@ -90,17 +101,17 @@ const Navbar = ({ TopOfPage , selectedPage, setselectedPage }) => {
                 setselectedPage={setselectedPage}
               />
               <Link
-                page="Experience"
+                page="Projects"
                 selectedPage={selectedPage}
                 setselectedPage={setselectedPage}
               />
               <Link
-                page="Testimonials"
+                page="TechTiles"
                 selectedPage={selectedPage}
                 setselectedPage={setselectedPage}
               />
               <Link
-                page="Contacts"
+                page="Contact"
                 selectedPage={selectedPage}
                 setselectedPage={setselectedPage}
               />

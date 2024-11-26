@@ -12,7 +12,7 @@ const SocialMediaIcons = () => {
         <a
          className='hover:opacity-50 transition duration-500 transform hover:scale-125 peer'
          target="_blank"
-         href="https://www.linkedin.com/"
+         href="https://www.linkedin.com/in/paramjeet-singh-9b97641b2/"
          rel='noreferrer'
           >
         <img alt="Linkedin" src={Linkedin}></img>

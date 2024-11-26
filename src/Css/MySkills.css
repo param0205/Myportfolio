@@ -38,3 +38,6 @@
     height: 100px;
     background: var(---clr);
 }
+.skills{
+    z-index: -1 !important;
+}

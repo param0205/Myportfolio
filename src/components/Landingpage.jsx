@@ -2,10 +2,10 @@ import React from "react";
 import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
-import profile from "../assests/profile-image.png";
+import profile from "../assests/Profile.jpeg";
 import SocialMediaIcons from "./SocialMediaIcons";
 
-const Landingpage = ({setselectedPage}) => {
+const Landingpage = ({ setselectedPage }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
   return (
     <section
@@ -17,53 +17,66 @@ const Landingpage = ({setselectedPage}) => {
         {isAboveMediumScreens ? (
           <div
             className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20
-         before:rounded-t-[500px] before:w-full before:max-w-[400px] before:h-full
+         before:w-full before:max-w-[400px] before:h-full
          before:border-2 before:border-blue before:z-[-1]"
           >
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transiton={{ delay:0.5, duration: 1 }}
-          variants={{
-            hidden: { opacity: 0, x: 200 },
-            visible: { opacity: 1, x: 0 },
-          }}
-        >
-            <img
-              alt="profile"
-              className="hover:filter hover:saturate-200 trasition duration-500 z-10 w-full
-              max-w-[-400px] md:max-w-[600px]"
-              src={profile}
-            />
-         </motion.div>
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              whileInView="visible"
+              // viewport={{ once: true, amount: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, x: 100 },
+                visible: { opacity: 1, x: 0 , transiton : { duration : 0.5 , delay : 0.5}},
+              }}
+            >
+              <img
+                alt="profile"
+                className="hover:filter hover:saturate-200 trasition duration-500 z-10 w-full
+              max-w-[-300px] md:max-w-[300px]"
+                src={profile}
+                height={300}
+                width={300}
+              />
+            </motion.div>
           </div>
         ) : (
           <div>
-            <img
-              alt="profile"
-              className="hover:filter hover:saturate-200 trasition duration-500 z-10 w-full
+            <motion.div
+              initial={{ x: 200, opacity: 0 }}
+              // whileInView="visible"
+              // viewport={{ once: true, amount: 0.5 }}
+              animate = "visible"
+              variants={{
+                hidden: { opacity: 0, x: 100 },
+                visible: { opacity: 1, x: 0 , transiton:{  duration: 0.5 , delay : 0.5 }},
+              }}
+            >
+              <img
+                alt="profile"
+                className="hover:filter hover:saturate-200 trasition duration-500 z-10 w-full
               max-w-[-400px] md:max-w-[600px]"
-              src={profile}
-            />
+                src={profile}
+                height={400}
+                width={400}
+              />
+            </motion.div>
           </div>
         )}
       </div>
       <div className="z-30 basis-3/6 mt-12 md:mt-32">
         <motion.div
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transiton={{ duration: 0.5 }}
+          animate="visible"
+          // viewport={{ once: true, amount: 0.5 }}
           variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
+            hidden: { opacity: 0, x: -100 },
+            visible: { opacity: 1, x: 0  ,transiton : { delay : 0.2 ,  duration: 0.5 }}, 
           }}
         >
           <p
-            className={`text-6xl font-playflair z-10 text-center md:text-start`}
+            className={`text-5xl font-playflair z-10 text-center md:text-start`}
           >
-            Param {""}
+            Paramjeet {""}
             <span
               className="xs:relative xs:text-violet-500 xs:font-semibold z-20
                  xs:before:content-brush before:absolute before:-left-[25px]
@@ -87,11 +100,11 @@ const Landingpage = ({setselectedPage}) => {
           className="flex mt-5 justify-center md:justify-start"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transiton={{ delay: 0.2, duration: 0.5 }}
+          // viewport={{ once: true, amount: 0.5 }}
+          transiton={{ delay: 0.4, duration: 0.5 }}
           variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
+            hidden: { opacity: 0, x: 150 },
+            visible: { opacity: 1, x: 0  , transition : { delay : 0.6 , duration : 0.5 }},
           }}
         >
           <AnchorLink
@@ -99,27 +112,33 @@ const Landingpage = ({setselectedPage}) => {
             hover:bg-blue hover:text-white transition duration-500"
             href="#contact"
             onClick={() => setselectedPage("contact")}
-          >Contact Me</AnchorLink>
-           <AnchorLink
+          >
+            Contact Me
+          </AnchorLink>
+          <AnchorLink
             className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
             href="#contact"
             onClick={() => setselectedPage("contact")}
           >
-            <div className="bg-deep-blue hover:text-red transition duration-500 w-full h-full flex
-            items-center justify-center font-playflair px-10">
-            Let's Talk
-            </div></AnchorLink>
+            <div
+              className="bg-deep-blue hover:text-red transition duration-500 w-full h-full flex
+            items-center justify-center font-playflair px-10"
+            >
+              Let's Talk
+            </div>
+          </AnchorLink>
         </motion.div>
-        <motion.div 
-                  className="flex mt-5 justify-center md:justify-start"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.5 }}
-                  transiton={{ delay: 0.4, duration: 0.5 }}
-                  variants={{
-                    hidden: { opacity: 0, x: -50 },
-                    visible: { opacity: 1, x: 0 },
-                  }}>
+        <motion.div
+          className="flex mt-5 justify-center md:justify-start"
+          initial="hidden"
+          whileInView="visible"
+          // viewport={{ once: true, amount: 0.5 }}
+          // transiton={{ delay: 1.0, duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, y: 150 },
+            visible: { opacity: 1, y: 0 ,transition : { delay : 0.8 ,duration : 0.5} },
+          }}
+        >
           <SocialMediaIcons></SocialMediaIcons>
         </motion.div>
       </div>
