@@ -9,7 +9,7 @@ import Projects from "./components/Projects";
 import TechTiles from "./components/TechTiles";
 import Contact from "./components/Contact";
 import WorkExp from "./components/WorkExp";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 const App = () => {
   const [selectedPage, setselectedPage] = useState("home");
   const [TopOfPage, setTopOfPage] = useState(true);
