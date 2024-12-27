@@ -20,7 +20,7 @@ const SocialMediaIcons = () => {
         <a
          className='hover:opacity-50 transition duration-500 transform hover:scale-125 peer'
          target="_blank"
-         href="https://www.facebook.com/"
+         href="https://www.facebook.com/profile.php?id=100010343406714"
          rel='noreferrer'
           >
         <img alt="Facebook" src = {facebook}></img>
@@ -28,18 +28,18 @@ const SocialMediaIcons = () => {
         <a
          className='hover:opacity-50 transition duration-500 transform hover:scale-125 peer'
          target="_blank"
-         href="https://www.twitter.com/"
+         href="https://x.com/Paramjeets87079"
          rel='noreferrer'
           >
-        <img alt="Linkedin" src ={twitter}></img>
+        <img alt="Twitter" src ={twitter}></img>
         </a>
         <a
          className='hover:opacity-50 transition duration-500 transform hover:scale-125 peer'
          target="_blank"
-         href="https://www.instagram.com/"
+         href="https://www.instagram.com/singhparam720/?next=%2F"
          rel='noreferrer'
           >
-        <img alt="Linkedin" src = {Insta}></img>
+        <img alt="Instagram" src = {Insta}></img>
         </a>
     </div>
   )

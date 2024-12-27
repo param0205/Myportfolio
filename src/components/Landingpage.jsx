@@ -22,11 +22,14 @@ const Landingpage = ({ setselectedPage }) => {
           >
             <motion.div
               initial={{ x: 100, opacity: 0 }}
-              whileInView="visible"
-              // viewport={{ once: true, amount: 0.5 }}
+              animate="visible"
               variants={{
                 hidden: { opacity: 0, x: 100 },
-                visible: { opacity: 1, x: 0 , transiton : { duration : 0.5 , delay : 0.5}},
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  transiton: { duration: 0.5, delay: 0.5 },
+                },
               }}
             >
               <img
@@ -45,10 +48,14 @@ const Landingpage = ({ setselectedPage }) => {
               initial={{ x: 200, opacity: 0 }}
               // whileInView="visible"
               // viewport={{ once: true, amount: 0.5 }}
-              animate = "visible"
+              animate="visible"
               variants={{
                 hidden: { opacity: 0, x: 100 },
-                visible: { opacity: 1, x: 0 , transiton:{  duration: 0.5 , delay : 0.5 }},
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  transiton: { duration: 0.5, delay: 0.5 },
+                },
               }}
             >
               <img
@@ -70,7 +77,11 @@ const Landingpage = ({ setselectedPage }) => {
           // viewport={{ once: true, amount: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },
-            visible: { opacity: 1, x: 0  ,transiton : { delay : 0.2 ,  duration: 0.5 }}, 
+            visible: {
+              opacity: 1,
+              x: 0,
+              transiton: { delay: 0.2, duration: 0.5 },
+            },
           }}
         >
           <p
@@ -86,14 +97,16 @@ const Landingpage = ({ setselectedPage }) => {
             </span>
           </p>
           <p className="mt-10 mb-7 text-sm text-center md:tect-start">
-            JavaScript Developer with over 2.5 years of experience in creating
-            user interfaces for custom React.js and SAP UI5 applications.
-            Expertise in React.js, Redux Toolkit, and ES6, along with a deep
-            understanding of SAP technologies such as Fiori, UI5, BTP, and BAS.
-            Proficient in using modern development tools such as MTA and Visual
-            Studio, with a strong focus on building responsive, scalable, and
-            maintainable applications. Dedicated to delivering high-quality code
-            and continuously expanding technical knowledge
+            JavaScript Developer with over 2.7 years of experience specializing
+            in building responsive and scalable user interfaces using React.js,
+            SAP UI5, and modern JavaScript (ES6). Proficient in React.js, Redux
+            Toolkit, and backend technologies like Node.js and Express.js, with
+            expertise in creating efficient and maintainable full-stack
+            applications. Skilled in SAP technologies such as Fiori, UI5, SAP
+            BTP, and Business Application Studio (BAS), with hands-on experience
+            in Multi-Target Application (MTA) development. Adept at leveraging
+            modern tools like Visual Studio Code to deliver high-quality
+            solutions.
           </p>
         </motion.div>
         <motion.div
@@ -104,7 +117,11 @@ const Landingpage = ({ setselectedPage }) => {
           transiton={{ delay: 0.4, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: 150 },
-            visible: { opacity: 1, x: 0  , transition : { delay : 0.6 , duration : 0.5 }},
+            visible: {
+              opacity: 1,
+              x: 0,
+              transition: { delay: 0.6, duration: 0.5 },
+            },
           }}
         >
           <AnchorLink
@@ -136,7 +153,11 @@ const Landingpage = ({ setselectedPage }) => {
           // transiton={{ delay: 1.0, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 150 },
-            visible: { opacity: 1, y: 0 ,transition : { delay : 0.8 ,duration : 0.5} },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { delay: 0.8, duration: 0.5 },
+            },
           }}
         >
           <SocialMediaIcons></SocialMediaIcons>

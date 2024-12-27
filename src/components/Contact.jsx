@@ -9,9 +9,10 @@ const Contact = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const handleRegistration = (data) =>{console.log(data);
+  const handleRegistration = (data) =>{console.log(data)
+    console.log(register) ;
   } 
-  const handleError = (errors) => {};
+  const handleError = (errors) => {console.log(errors)};
 
   const registerOptions = {
     name: { required: "Name is required" },
@@ -23,20 +24,23 @@ const Contact = () => {
         message: "Description must have at least 8 characters",
       },
       maxLength:{
-        value:2000,
+        value:100,
         message:"Description can not be more than 100 chars"
       }
     },
   };
-
-  const container = (delay) => ({
-    hidden: {x: -100, opacity: 0},
+  const container = (delay,hidden) => ({
+    hidden: {x: -hidden, opacity: 0},
     visible: {
         x: 0,
         opacity: 1,
-        transition: {duration: 0.5, delay: delay}
+        transition: {duration: 1, delay: delay}
     }
-})
+});
+const onSubmit = (data, e) => {
+  console.log("Valid data submitted:", data);
+  e.target.submit(); // Submit the form if validation passes
+};
   return (
     <section id="contact" className="py-24 ">
       <motion.div
@@ -55,9 +59,7 @@ const Contact = () => {
           </div>
         </div>
         <p className="mt-10 mb-7">
-          Experienced in scaleable and Responsive UI developement using Agile
-          Technologies . Acquinted with SAP-BTP concepts as well as CI/CD and
-          Cloud-Foundry
+           Hello there.... Let's connect nnvote and share some ideas to amaze each other's brain and innovate something mind boggling...
         </p>
       </motion.div>
 
@@ -67,7 +69,7 @@ const Contact = () => {
           className="basis-1/2 flex justify-center"
           initial="hidden"
           animate="visible"
-          variants={container(0.2)}
+          variants={container(0.2,100)}
         >
           <img
             src="src/assests/contact-image.jpeg"
@@ -80,15 +82,16 @@ const Contact = () => {
           initial="hidden"
           animate="visible"
           className="basis-1/2 flex justify-center"
-          variants={container(0.4)}
+          variants={container(0.4,200)}
         >
-          <form onSubmit={handleSubmit(handleRegistration, handleError)} target="_blank" method="POST"
+          <form  target="_blank" method="POST"
           action="https://formsubmit.co/param020599@gmail.com"
-          className="w-full h-full">
-            <div>
+          className="w-full h-full"
+          onSubmit={handleSubmit(onSubmit)}>
+            <div className="mt-5">
               <label>Name</label>
               <input
-                className="w-full font-semibold font-playfair bg-cyan-400 p-3 placeholder-opaque-black"
+                className="w-full font-semibold font-playfair bg-cyan-400 p-3 placeholder-opaque-black mb-5 mt-5"
                 name="name"
                 type="text"
                 {...register("name", registerOptions.name)}
@@ -101,7 +104,7 @@ const Contact = () => {
             <div>
               <label>Email</label>
               <input
-                className="w-full font-semibold font-playfair bg-cyan-400 p-3 placeholder-opaque-black"
+                className="w-full font-semibold font-playfair bg-cyan-400 p-3 placeholder-opaque-black mb-5"
                 type="email"
                 name="email"
                 {...register("email", registerOptions.email)}
@@ -128,6 +131,7 @@ const Contact = () => {
             transition duration-500 ">SEND ME A MESSAGE</button>
           </form>
         </motion.div>
+        
       </div>
     </section>
   );

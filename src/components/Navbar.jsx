@@ -21,7 +21,7 @@ const Link = ({ page, selectedPage, setselectedPage }) => {
   );
 };
 
-const Navbar = ({ TopOfPage , selectedPage, setselectedPage }) => {
+const Navbar = ({ TopOfPage, selectedPage, setselectedPage }) => {
   const [IsMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveSmallScreen = useMediaQuery("(min-width : 768px)");
   const Headerbg = TopOfPage ? "" : "bg-rose-500";
@@ -29,16 +29,16 @@ const Navbar = ({ TopOfPage , selectedPage, setselectedPage }) => {
     <nav className={`${Headerbg} z-40 w-full fixed top-0 py-2`}>
       <div className="flex items-center justify-between mx-auto w-5/6">
         <motion.h4
-         variants={{
-           hidden : { y : -100 , opacity : 0 },
-           visible:{
-             opacity:1,
-             y:0 ,   
-             transistion : { duration : 0.5}
+          variants={{
+            hidden: { y: -100, opacity: 0 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transistion: { duration: 0.5 },
             },
-        
-         }}
-        className="font-playfair text-3xl font-bold hover:text-yellow">
+          }}
+          className="font-playfair text-3xl font-bold hover:text-yellow"
+        >
           Software Engineer
         </motion.h4>
 
@@ -52,6 +52,11 @@ const Navbar = ({ TopOfPage , selectedPage, setselectedPage }) => {
             />
             <Link
               page="Skills"
+              selectedPage={selectedPage}
+              setselectedPage={setselectedPage}
+            />
+            <Link
+              page="WorkExp"
               selectedPage={selectedPage}
               setselectedPage={setselectedPage}
             />
@@ -95,7 +100,7 @@ const Navbar = ({ TopOfPage , selectedPage, setselectedPage }) => {
                 selectedPage={selectedPage}
                 setselectedPage={setselectedPage}
               />
-             <Link
+              <Link
                 page="Skills"
                 selectedPage={selectedPage}
                 setselectedPage={setselectedPage}

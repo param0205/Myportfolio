@@ -8,6 +8,8 @@ import MySkills from "./components/MySkills";
 import Projects from "./components/Projects";
 import TechTiles from "./components/TechTiles";
 import Contact from "./components/Contact";
+import WorkExp from "./components/WorkExp";
+import Footer from "./components/footer";
 const App = () => {
   const [selectedPage, setselectedPage] = useState("home");
   const [TopOfPage, setTopOfPage] = useState(true);
@@ -44,6 +46,10 @@ const App = () => {
       </div>
       <Linegradient />
       <div className="w-5/6 mx-auto md:h-full">
+        <WorkExp/>
+      </div>
+      <Linegradient />
+      <div className="w-5/6 mx-auto md:h-full">
         <Projects/>
       </div>
       <Linegradient />
@@ -53,6 +59,9 @@ const App = () => {
       <Linegradient />
       <div className="w-5/6 mx-auto">
         <Contact/>
+      </div>
+      <div>
+        <Footer/>
       </div>
     </div>
   );

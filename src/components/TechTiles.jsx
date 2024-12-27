@@ -4,7 +4,9 @@ import { RiReactjsLine } from "react-icons/ri";
 import { RiJavascriptLine } from "react-icons/ri";
 import { RiHtml5Line } from "react-icons/ri";
 import { RiCss3Line } from "react-icons/ri";
+import { RiNodejsFill } from "react-icons/ri";
 import { SiSap } from "react-icons/si";
+import { SiExpress } from "react-icons/si";
 import { animate, motion } from "framer-motion";
 
 
@@ -86,6 +88,20 @@ const TechTiles = () => {
             className="rounded-2xl border-4 border-neutral-800 gap-4"
              >
             <SiSap className="text-8xl text-cyan-500" />
+          </motion.div>
+          <motion.div animate="animate"
+            initial = "initial"
+            variants={reanimate(3.2)}
+            className="rounded-2xl border-4 border-neutral-800 gap-4"
+             >
+            <RiNodejsFill className="text-8xl text-green-500" />
+          </motion.div>
+          <motion.div animate="animate"
+            initial = "initial"
+            variants={reanimate(3.4)}
+            className="rounded-2xl border-4 border-neutral-800 gap-4"
+             >
+            <SiExpress className="text-8xl text-green-500" />
           </motion.div>
         </motion.div>
       </motion.div>
