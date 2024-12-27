@@ -5,8 +5,8 @@ const Footer = () => {
     <div className="bg-rose-500 h-[200px] flex justify-center">
       <div>
         <SocialMediaIcons />
-        <p><span><i class="material-icons"></i>
-        </span>Electronic City,Bangalore</p>
+        <p className="font-playfiar font-semibold text-1xl"><span><i class="material-icons"></i>
+        </span>Electronic City, Bangalore</p>
       </div>
     </div>
   );
