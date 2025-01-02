@@ -58,7 +58,7 @@ const Project = ({ title }) => {
         </p>
       </div>
       <img
-        src={`src/assests/${projecttitle}.jpeg`}
+        src={`/${projecttitle}.jpeg`}
         alt={projecttitle}
         className="relative w-full md:h-full"
       ></img>
@@ -103,7 +103,7 @@ const Projects = () => {
           <div className="flex justify-center text-center p-10 items center bg-rose-500 max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold ">
             BEAUTIFUL USER EXPERIENCES
           </div>
-          <Project title="SAP-IM/WM" />
+          <Project title="SAP-IMWM" />
           <Project title="SmartWarehouse" />
 
           {/* <Project title="SmartWarehouse" /> */}

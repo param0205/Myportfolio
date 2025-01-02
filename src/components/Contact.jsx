@@ -59,7 +59,7 @@ const onSubmit = (data, e) => {
           </div>
         </div>
         <p className="mt-10 mb-7">
-           Hello there.... Let's connect nnvote and share some ideas to amaze each other's brain and innovate something mind boggling...
+           Hello there.... Let's connect and share some ideas to amaze each other's brain and innovate something mind boggling...
         </p>
       </motion.div>
 
@@ -72,7 +72,7 @@ const onSubmit = (data, e) => {
           variants={container(0.2,100)}
         >
           <img
-            src="src/assests/contact-image.jpeg"
+            src="/contact-image.jpeg"
             alt="Contact-info"
             height={400}
             width={400}
